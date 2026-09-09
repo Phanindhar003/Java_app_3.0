@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -6,6 +7,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Spring Boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -13,6 +15,7 @@
         <relativePath/>
     </parent>
 
+    <!-- Project Information -->
     <groupId>com.minikube.sample</groupId>
     <artifactId>kubernetes-configmap-reload</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -22,14 +25,16 @@
     <name>minikube-sample</name>
     <description>Demo project for Spring Cloud Kubernetes</description>
 
+    <!-- Java Configuration -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <!-- Keep application compatibility with Java 8 -->
-        <java.version>1.8</java.version>
+        <!-- Jenkins is running Java 21 -->
+        <java.version>21</java.version>
     </properties>
 
+    <!-- Dependencies -->
     <dependencies>
 
         <!-- Spring Boot Web -->
@@ -59,14 +64,14 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Spring Boot Test -->
+        <!-- Spring Boot Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Spring Security Test -->
+        <!-- Spring Security Testing -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
@@ -75,6 +80,7 @@
 
     </dependencies>
 
+    <!-- Build Configuration -->
     <build>
         <plugins>
 
@@ -91,10 +97,10 @@
                 <version>3.16.0</version>
 
                 <configuration>
-                    <!-- Compile using Java 8 API/bytecode -->
-                    <release>8</release>
+                    <!-- Compile using Java 21 -->
+                    <release>21</release>
 
-                    <!-- Lombok annotation processor -->
+                    <!-- Lombok Annotation Processor -->
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
